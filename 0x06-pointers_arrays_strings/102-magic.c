@@ -1,8 +1,3 @@
-/**
- * main - Entry point
- *
- * Return: Always 0 if successful
- */
 #include <stdio.h>
 
 int main(void)
