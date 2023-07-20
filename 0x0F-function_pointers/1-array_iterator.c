@@ -4,25 +4,36 @@
 
 /**
 
- * print_name - print name using pointer to function
+ * array_iterator - prints each array elem on a newl
 
- * @name: string to add
+ * @array: array
 
- * @f: pointer to function
+ * @size: how many elem to print
 
- * Return: nothing
+ * @action: pointer to print in regular or hex
 
- **/
+ * Return: void
 
-void print_name(char *name, void (*f)(char *))
+ */
+
+void array_iterator(int *array, size_t size, void (*action)(int))
 
 {
 
-        if (name == NULL || f == NULL)
+        unsigned int i;
+
+
+        if (array == NULL || action == NULL)
 
                 return;
 
 
-        f(name);
+        for (i = 0; i < size; i++)
+
+        {
+
+                action(array[i]);
+
+        }
 
 }
