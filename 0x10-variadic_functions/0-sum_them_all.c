@@ -4,6 +4,7 @@
 /**
  * sum_them_all - function that sums all the input integers
  * @n: input to the function
+ * Return: returns add if successful
  */
 int sum_them_all(const unsigned int n, ...)
 {
