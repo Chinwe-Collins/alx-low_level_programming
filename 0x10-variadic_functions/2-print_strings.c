@@ -5,6 +5,7 @@
  * print_strings - function that prints strings
  * @separator: input to the function
  * @n: input to the function
+ * Retturn: returns nothing if successful
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
