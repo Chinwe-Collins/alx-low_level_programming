@@ -1,25 +1,35 @@
+
 #include <stdio.h>
-#include <string.h>
-#include "main.h"
-unsigned int binary_to_uint(const char *b)
+void print_binary(unsigned long int n)
 {
-	unsigned int result = 0;
-	int i, j;
-	int len;
+	int numBits = sizeof(unsigned long int) * 8;
+	int i;
+	int leadingZero = 1;
 	
-	len = strlen(b);
-	for (i = len - 1, j = 0; i >= 0; i--, j++)
+	for (i = numBits - 1; i >= 0; i--)
 	{
-		if (b[j]  == '1')
+		if ((n >> i) & 1)
 		{
-			result = result + (1 << i); 
+			leadingZero = 0;
+			putchar('1');
 		}
-		else if (b[j] != '0')
+		else if (!leadingZero || i == 0)
 		{
-			return (0);
+			putchar('0');
 		}
-
 	}
+}
 
-		return (result);
+int main()
+{
+	unsigned long int number;
+	printf("Enter a number: ");
+	scanf("%lu", &number);
+	
+	printf("Binary representation: ");
+	print_binary(number);
+	
+	putchar('\n');
+	
+	return 0;
 }
